@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 
 //makes sure its server.listen not app.listen
 //app.listen causes the socket.io cdn have a 404 error
-server.listen(5000, () => { 
+server.listen(process.env.PORT || 5000, () => { 
     console.log("server has started . . .");
 })
 
