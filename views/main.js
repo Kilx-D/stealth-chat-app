@@ -1,7 +1,12 @@
 let messages = [];
 let count = 0;
 
-
+document.getElementById("userMessageField").addEventListener("keyup", function(e) { 
+   
+    if(e.key == "Enter"){
+        sendMessage();
+    }
+})
 
 const socket = io(window.location.href);
 socket.on('connection', () => { 
