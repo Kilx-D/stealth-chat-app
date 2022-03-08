@@ -31,14 +31,14 @@ socket.on('message', (data) => {
 //     document.getElementById('last-online').style.display = "inline";
 // })
 
-// const alerter = () => { 
-//     if(messages.length > 0){
-//         for(let msg of messages) { 
-//             alert(msg);
-//         }
-//     }
-//     messages = [];
-// }
+const alerter = () => { 
+    if(messages.length > 0){
+        for(let msg of messages) { 
+            alert(msg);
+        }
+    }
+    messages = [];
+}
 
 document.querySelector("body").addEventListener("click", () => { 
     alerter();
