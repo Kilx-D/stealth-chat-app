@@ -9,9 +9,7 @@ document.getElementById("userMessageField").addEventListener("keyup", function(e
 })
 
 const socket = io(window.location.href);
-socket.on('connection', () => { 
-    console.log("pop");
-})
+
 
 socket.on('message', (data) => { 
     messages.push(data);
@@ -20,14 +18,27 @@ socket.on('message', (data) => {
 
 })
 
-const alerter = () => { 
-    if(messages.length > 0){
-        for(let msg of messages) { 
-            alert(msg);
-        }
-    }
-    messages = [];
-}
+// socket.on('connection', () => {
+//     document.getElementById('last-online').innerHTML = 'Note Online <span id="info" style="color: #00ff91"> ⬤</span>';
+//     document.getElementById('last-online').style.display = "inline";
+   
+//     //document.querySelector("span#info").style.color = ""
+// })
+
+// socket.on('disconnect', () => {
+//     const disconnectTime = new Date().toLocaleTimeString(navigator.language, {hour: '2-digit', minute:'2-digit'});
+//     document.getElementById('last-online').innerHTML = `Last online at ${disconnectTime}`;
+//     document.getElementById('last-online').style.display = "inline";
+// })
+
+// const alerter = () => { 
+//     if(messages.length > 0){
+//         for(let msg of messages) { 
+//             alert(msg);
+//         }
+//     }
+//     messages = [];
+// }
 
 document.querySelector("body").addEventListener("click", () => { 
     alerter();
@@ -58,10 +69,12 @@ const hideText = () => {
 
 
 const sendMessage = () => { 
+    const time = new Date().toLocaleTimeString(navigator.language, {hour: '2-digit', minute:'2-digit'});
     document.querySelector("#send").disabled = true;
     const userMessage = document.getElementById("userMessageField").value;
-    socket.emit('message', userMessage);
-    const success = document.createElement('p')
+    socket.emit('message', `Sent at ${time}\n\n${userMessage}`);
+    const success = document.createElement('p');
+    success.style.marginLeft = '20px'
     success.innerHTML = "Successfully saved";
     success.setAttribute("id", "success-msg")
     document.querySelector(".main").appendChild(success)

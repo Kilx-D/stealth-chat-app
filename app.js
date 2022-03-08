@@ -22,10 +22,16 @@ server.listen(process.env.PORT || 5000, () => {
     console.log("server has started . . .");
 })
 
+
+
 io.on('connection', (socket) => { 
-    console.log("a user has loged in");
+    socket.broadcast.emit("connection", true)
+
+    
     socket.on("message", (data) => { 
         console.log(data);
         socket.broadcast.emit("message", data);
     })
+
+    
 })

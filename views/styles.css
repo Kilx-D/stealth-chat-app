@@ -1,49 +1,45 @@
-:root { 
-    margin: 0;
-    padding: 0;
+:root {
+  margin: 0;
+  padding: 0;
 }
-
 
 body {
-    color: #fff; 
-    background-color: rgb(27, 27, 27);
-    padding: 20vw;
-    
+  color: #fff;
+  background-color: rgb(27, 27, 27);
+  padding: 20vw;
 }
 
-div.main { 
-    margin: 0 auto;
-    background-color: black;
-    padding: 14px;
-    border-radius: 20px;
-    /* display: flex;
+div.main {
+  margin: 0 auto;
+  background-color: black;
+  padding: 14px;
+  border-radius: 20px;
+  /* display: flex;
     justify-content: center; */
-    max-width: 520px;
+  max-width: 520px;
 }
 
-#userMessageField { 
-    min-width: 200px;
-    max-width: 500px;
-    border-radius: 15px;
-    resize: none;
-    position: block;
-    /*margin: 0 auto;*/
-    background-color: rgb(83, 83, 83);
-    color: white;
-    
-   
+#userMessageField {
+  min-width: 200px;
+  max-width: 500px;
+  border-radius: 15px;
+  resize: none;
+  position: block;
+  /*margin: 0 auto;*/
+  background-color: rgb(83, 83, 83);
+  color: white;
 }
 
-#send { 
-    margin: 16px 0;
+#send {
+  margin: 16px 0;
 }
 
-.btn { 
-    border-radius: 30px;
-    margin-right: 10px;
+.btn {
+  border-radius: 30px;
+  margin-right: 10px;
 }
 
-#success-msg { 
-    display: inline;
-    color: rgb(138, 255, 138);
+#success-msg {
+  display: inline;
+  color: rgb(138, 255, 138);
 }
