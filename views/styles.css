@@ -30,6 +30,12 @@ div.main {
   color: white;
 }
 
+#userMessageField:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
 #send {
   margin: 16px 0;
 }
@@ -42,4 +48,11 @@ div.main {
 #success-msg {
   display: inline;
   color: rgb(138, 255, 138);
+}
+
+#stop {
+  text-align: center;
+
+  font-size: 10em;
+  width: 100%;
 }

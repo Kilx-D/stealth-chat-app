@@ -33,5 +33,10 @@ io.on('connection', (socket) => {
         socket.broadcast.emit("message", data);
     })
 
+    socket.on("leave", (data) => { 
+        socket.broadcast.emit("leave", data)
+        console.log("user has left");
+    })
+
     
 })
