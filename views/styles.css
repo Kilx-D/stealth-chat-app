@@ -56,3 +56,16 @@ div.main {
   font-size: 10em;
   width: 100%;
 }
+
+div#noti {
+  background-color: rgb(248, 93, 93);
+  height: minmax(20px, 50px);
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

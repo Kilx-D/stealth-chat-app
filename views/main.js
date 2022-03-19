@@ -10,14 +10,16 @@ let messagePerMinute = 0;
 let recentMessages = [];
 const walk = 100;
 
-const messager = `
+const messager = `<div>
 <div class="main">
         <input class="form-control" type="password" name="message" id="userMessageField"></input>
         
         <button id="send" onclick="sendMessage()" class="btn btn-primary"> Save</button>
         <button id="show" onclick="showText()" class="btn btn-outline-info">Show</button>
         
-    </div>`;
+    </div>
+</div>`;
+
 
 
     function shadow(e){
@@ -55,6 +57,10 @@ const socket = io(window.location.href);
 
 socket.on('message', (data) => { 
     messages.push(data);
+    const noti = document.createElement('div');
+    noti.innerHTML = 'New Note';
+    noti.setAttribute('id', 'noti');
+    document.body.appendChild(noti)
     document.getElementById('icon').setAttribute("href", "./noti_icon.png")
     document.querySelector("title").innerHTML = "📨 New Note"
 
@@ -76,9 +82,18 @@ socket.on('message', (data) => {
 const alerter = () => { 
     if(messages.length > 0){
         for(let msg of messages) { 
-            alert(msg);
+            try {
+                document.getElementById("stop").value = msg;
+                setTimeout(() => { 
+
+                }, 1000)
+            } catch (error) {
+                alert(msg)
+            }
         }
     }
+    
+    document.getElementById("noti").remove();
     messages = [];
 }
 
